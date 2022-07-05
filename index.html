@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- VUE CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.0/dist/vue.js"></script>
+    <!-- BOOTSTRAP CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Password thingy</title>
+</head>
+
+<body>
+    <div class="div" id="app">
+        <div class="container text-center" v-bind:style = "overallBack">
+            <h1 class="display-1">Password Strength O' Meter</h1>
+            <br>
+            <div class="input-group input-group-lg">
+                <input type="text" v-model="passw" class="form-control">
+            </div>
+            <br>
+
+            <h3 v-bind:class="secure_counter" class="display-6">The Password is {{ strength/10 }}/10 Secure</h3>
+            <!-- <p v-if='strength == 100'>Good job lmao</p> -->
+
+
+            <div class="row">
+                <div v-bind:class="track.upc" class="col m-1">
+                    Upper Case Alphabet
+                </div>
+                <div v-bind:class="track.lwc" class="col m-1">
+                    Lower Case Alphabet
+                </div>
+                <div v-bind:class="track.dig" class="col m-1">
+                    Number
+                </div>
+                <div v-bind:class="track.spec" class="col m-1">
+                    Special Character
+                </div>
+                <div v-bind:class="track.len" class="col m-1">
+                    Length
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <input type="button" class="btn btn-success" value="Check Password"> -->
+</body>
+<script type="text/javascript" src="main.js"></script>
+
+</html>
